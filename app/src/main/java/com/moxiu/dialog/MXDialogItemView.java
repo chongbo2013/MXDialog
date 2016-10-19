@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Created by x002 on 2016/10/18.
+ * Created by xff on 2016/10/18.
  */
 
 public class MXDialogItemView extends LinearLayout {

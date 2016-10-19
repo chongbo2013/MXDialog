@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义带角标的ImageView xff!-->
+    <declare-styleable name="MXFollowButton">
+        <attr name="followTextSize" format="dimension" />
+        <attr name="followUnselectedColor" format="color" />
+        <attr name="followSelectColor" format="color" />
+        <attr name="followText" format="string" />
+        <attr name="unfollowText" format="string" />
+        <attr name="followRadius" format="dimension" />
+        <attr name="followSelect" format="boolean" />
+        <attr name="followStroke" format="dimension" />
+    </declare-styleable>
+</resources>
