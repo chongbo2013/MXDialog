@@ -125,7 +125,7 @@ public class FollowButton extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         int width = getWidth() - getPaddingLeft() - getPaddingRight();
-        int height = getHeight() - getPaddingTop() - getPaddingRight();
+        int height = getHeight() - getPaddingTop() - getPaddingBottom();
         //画背景
         targetRect.set(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + width, getPaddingBottom() + height);
         initBgColor();

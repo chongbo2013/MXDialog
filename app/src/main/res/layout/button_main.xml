@@ -13,13 +13,14 @@
     tools:context="com.moxiu.dialog.DialogActivity">
 
     <com.moxiu.dialog.button.FollowButton
-        android:layout_width="60dp"
-        android:layout_height="24dp"
+        android:layout_width="62dp"
+        android:layout_height="26dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         app:followUnselectedColor="#4DCCEEFF"
         app:followSelectColor="#00e5d2"
         app:followRadius="13dp"
+        android:padding="2dip"
         app:followText="+ 关注"
         app:unfollowText="已关注"
         app:followSelect="false"
