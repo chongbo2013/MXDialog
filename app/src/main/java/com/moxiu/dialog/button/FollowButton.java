@@ -109,7 +109,7 @@ public class FollowButton extends View {
     public void initBgColor() {
         mPaint.setColor(isSelect ? selectColor : unselectedColor);
         mPaint.setStyle(isSelect ? Paint.Style.FILL : Paint.Style.STROKE);
-//        mPaint.setStrokeWidth(followStroke);
+        mPaint.setStrokeWidth(followStroke);
     }
 
     /**

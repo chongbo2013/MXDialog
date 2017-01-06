@@ -1,5 +1,6 @@
 package com.moxiu.dialog;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,12 +22,15 @@ public class DialogActivity extends AppCompatActivity {
         btn_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MXDialog(DialogActivity.this).
+                new MXDialog(DialogActivity.this,R.style.TMShowDialog_Animation).
                         setBackgroundResource(R.drawable.tm_common_dialog_style_one_bg).
-                        setItemWidth(300).//设置item宽度
-                        addMenu(0, "first").//添加菜单
-                        addMenu(1, "2").
-                        addMenu(2, "3").//设置点击监听，返回true  点击自动关闭对话框 false则不会
+                        addMenu(0, "拍摄视频").//添加菜单
+                        addLine(1,Color.GRAY).
+                        addMenu(1, "导入视频").
+                        addLine(2,Color.GRAY).
+                        addMenu(2, "制作图片电影").
+                        addLine(12,Color.GRAY).
+                        addMenu(3, "取消").
                         setMXDialogMenuClickListem(new MXDialog.MXDialogMenuClickListem() {
                             @Override
                             public boolean onClick(MXDialog.Menu menu) {
