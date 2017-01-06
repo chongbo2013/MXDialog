@@ -102,7 +102,14 @@ public class MXDialog {
     public MXDialog addMenu(int menuId, String title,int grarys) {
 
         if (mBuilder != null) {
-            mBuilder.addMenu(menuId, title);
+            mBuilder.addMenu(menuId, title,grarys);
+        }
+        return this;
+    }
+    public MXDialog addMenu(int menuId, String title) {
+
+        if (mBuilder != null) {
+            mBuilder.addMenu(menuId, title,Gravity.CENTER);
         }
         return this;
     }
@@ -226,7 +233,7 @@ public class MXDialog {
             addView(line);
         }
 
-        public void addMenu(int menuId, String title) {
+        public void addMenu(int menuId, String title,int gravity) {
             if (menus == null) {
                 menus = new ArrayList<>();
             }
@@ -235,7 +242,13 @@ public class MXDialog {
             menu.setTitle(title);
             menus.add(menu);
             //添加菜单
-            addView(createMenu(menu));
+            View menuView=createMenu(menu);
+            addView(menuView);
+            if(menuView.getLayoutParams()!=null&&menuView.getLayoutParams() instanceof LinearLayout.LayoutParams){
+                LinearLayout.LayoutParams lp= (LinearLayout.LayoutParams) menuView.getLayoutParams();
+                lp.gravity=gravity;
+                menuView.setLayoutParams(lp);
+            }
             if(enableLine)
             addView(addLineView());
         }

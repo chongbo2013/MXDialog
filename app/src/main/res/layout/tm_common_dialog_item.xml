@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
+    android:gravity="center"
     android:background="@drawable/tm_common_dialog_style_one_btn_selector"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:id="@+id/tv_mxdialog_common_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_weight="1"
+
         android:gravity="center_vertical"
         android:padding="16dp"
+        android:text="dddddddddddddddd"
         android:textColor="#4c4c4c"
         android:textSize="@dimen/tm_big_text_size" />
 </com.moxiu.dialog.MXDialogItemView>
