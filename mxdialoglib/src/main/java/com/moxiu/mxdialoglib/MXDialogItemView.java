@@ -1,4 +1,4 @@
-package com.moxiu.dialog;
+package com.moxiu.mxdialoglib;
 
 import android.content.Context;
 import android.util.AttributeSet;

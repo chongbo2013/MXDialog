@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.moxiu.mxdialoglib.MXDialog;
+
 /**
  * test dialog
  * ferris.xu 2016-10-18 18:00:09

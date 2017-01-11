@@ -1,4 +1,4 @@
-<com.moxiu.dialog.MXDialogItemView
+<com.moxiu.mxdialoglib.MXDialogItemView
     android:id="@+id/ll_mxdialog_common_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,4 +16,4 @@
         android:text="dddddddddddddddd"
         android:textColor="#4c4c4c"
         android:textSize="@dimen/tm_big_text_size" />
-</com.moxiu.dialog.MXDialogItemView>
+</com.moxiu.mxdialoglib.MXDialogItemView>

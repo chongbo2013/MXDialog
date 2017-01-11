@@ -1,4 +1,4 @@
-package com.moxiu.dialog;
+package com.moxiu.mxdialoglib;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,11 +14,6 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
-
-/**
- * 通用对话框
- * Created by xff on 2016/10/18.
- */
 
 public class MXDialog {
     private Context mContext;
@@ -44,9 +39,7 @@ public class MXDialog {
         }
     }
 
-    /**
-     * 显示菜单
-     */
+
     public void show() {
         if (mBuilder == null) {
             mBuilder.commit();
@@ -54,12 +47,7 @@ public class MXDialog {
         mAlertDialog.show();
     }
 
-    /**
-     * 给菜单设置背景资源
-     *
-     * @param drawable
-     * @return
-     */
+
     public MXDialog setBackground(Drawable drawable) {
         mBackgroundDrawable = drawable;
         if (mBuilder != null) {
@@ -68,22 +56,12 @@ public class MXDialog {
         return this;
     }
 
-    /**
-     * 只有在默认style下才有效
-     * @param width
-     * @return
-     */
     public MXDialog setItemWidth(float width) {
         itemWidth = width;
         return this;
     }
 
-    /**
-     * 给菜单设置背景资源
-     *
-     * @param resId
-     * @return
-     */
+
     public MXDialog setBackgroundResource(int resId) {
         mBackgroundResId = resId;
         if (mBuilder != null) {
@@ -92,13 +70,7 @@ public class MXDialog {
         return this;
     }
 
-    /**
-     * 添加菜单
-     *
-     * @param menuId 菜单id
-     * @param title  菜单标题
-     * @return
-     */
+
     public MXDialog addMenu(int menuId, String title,int grarys) {
 
         if (mBuilder != null) {
@@ -121,19 +93,14 @@ public class MXDialog {
         return this;
     }
 
-    /**
-     * 关闭对话框
-     */
+
     public void dismiss() {
         mAlertDialog.dismiss();
     }
 
     private MXDialogMenuClickListem mListem;
 
-    /**
-     * @param mListem
-     * @return
-     */
+
     public MXDialog setMXDialogMenuClickListem(MXDialogMenuClickListem mListem) {
         this.mListem = mListem;
         return this;
@@ -162,7 +129,6 @@ public class MXDialog {
 
         int itemLineColor= Color.GRAY;
         public Builder(int style) {
-            //创建对话框
             this.style=style;
             mAlertDialog = new Dialog(mContext, style);
             mAlertDialog.getWindow()
@@ -182,12 +148,10 @@ public class MXDialog {
             mAlertDialogWindow.setContentView(contentView);
 
             if(style==R.style.TMShowDialog_Animation){
-            //去掉dialog默认的padding
             mAlertDialogWindow.getDecorView().setPadding(0, 0, 0, 0);
             WindowManager.LayoutParams lp = mAlertDialogWindow.getAttributes();
             lp.width = WindowManager.LayoutParams.MATCH_PARENT;
             lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            //设置dialog的位置在底部
             lp.gravity = Gravity.BOTTOM;
             mAlertDialogWindow.setAttributes(lp);
             }
@@ -221,11 +185,7 @@ public class MXDialog {
             mAlertDialog.setCancelable(canceledOnTouchOutside);
         }
 
-        /**
-         * 添加line
-         * @param hight
-         * @param color
-         */
+
         public void addLine(int hight, int color) {
             View line=new View(mContext);
             line.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,hight));
@@ -241,7 +201,6 @@ public class MXDialog {
             menu.setId(menuId);
             menu.setTitle(title);
             menus.add(menu);
-            //添加菜单
             View menuView=createMenu(menu);
             addView(menuView);
             if(menuView.getLayoutParams()!=null&&menuView.getLayoutParams() instanceof LinearLayout.LayoutParams){
@@ -253,7 +212,7 @@ public class MXDialog {
             addView(addLineView());
         }
 
-        //添加line
+
         private View addLineView() {
             View line=new View(mContext);
             line.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,1));
@@ -312,9 +271,7 @@ public class MXDialog {
             this.itemLineColor=gray;
         }
 
-        /**
-         * 移除最后一个line等操作
-         */
+
         public void commit() {
             if(enableLine) {
                 LinearLayout root = getViewGroup();
@@ -329,7 +286,7 @@ public class MXDialog {
 
     }
 
-    //菜单
+
     public class Menu {
         int id = 0;
         String title;
@@ -352,12 +309,6 @@ public class MXDialog {
     }
 
     public interface MXDialogMenuClickListem {
-        /**
-         * 点击返回菜单
-         *
-         * @param menu
-         * @return true 关闭对话框，否则不关闭，或者手动关闭
-         */
         boolean onClick(Menu menu);
     }
 
